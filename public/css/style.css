@@ -227,4 +227,80 @@ body{
   .starability-slot {
     font-size: 28px !important;
   }
+
+}
+
+/* ===== ANIMATIONS ===== */
+
+/* Page load - cards fade in */
+.listing-card {
+  animation: fadeInUp 0.5s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Cards delay - ek ek karke aaye */
+.listing-card:nth-child(1) { animation-delay: 0.1s; }
+.listing-card:nth-child(2) { animation-delay: 0.2s; }
+.listing-card:nth-child(3) { animation-delay: 0.3s; }
+.listing-card:nth-child(4) { animation-delay: 0.4s; }
+.listing-card:nth-child(5) { animation-delay: 0.5s; }
+.listing-card:nth-child(6) { animation-delay: 0.6s; }
+
+/* Listing cards hover zoom */
+.card-img-top {
+  transition: transform 0.3s ease !important;
+}
+
+.listing-card:hover .card-img-top {
+  transform: scale(1.05);
+}
+
+/* Navbar scroll shadow */
+.navbar {
+  transition: box-shadow 0.3s ease;
+}
+
+.navbar.scrolled {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Buttons smooth effect */
+.btn {
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15) !important;
+}
+
+.btn:active {
+  transform: translateY(0px);
+}
+
+/* Flash messages slide in */
+.alert {
+  animation: slideIn 0.4s ease forwards;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
