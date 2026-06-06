@@ -184,4 +184,47 @@ body{
     padding: 1rem;
     gap: 0.5rem;
   }
+/* Show page card full width */
+  .show-card {
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+  /* Image full width */
+  .show-img {
+    height: 250px !important;
+    width: 100% !important;
+    object-fit: cover !important;
+  }
+
+  /* Offset remove on mobile */
+  .col-6.offset-3,
+  .col-8.offset-3 {
+    width: 100% !important;
+    margin-left: 0 !important;
+    padding: 0 1rem !important;
+  }
+
+  /* Review cards full width */
+  .card.col-5 {
+    width: 100% !important;
+    margin: 0 0 1rem 0 !important;
+  }
+
+  /* Comment textarea */
+  textarea#comment {
+    font-size: 14px !important;
+    border-radius: 0.5rem !important;
+  }
+
+  /* Submit button full width */
+  .btn.btn-outline-dark {
+    width: 100% !important;
+    padding: 0.6rem !important;
+  }
+
+  /* Star rating */
+  .starability-slot {
+    font-size: 28px !important;
+  }
 }
