@@ -130,3 +130,58 @@ body{
   height: 400px;
   width: 80vh;
 }
+
+/* ===== RESPONSIVE - MOBILE ===== */
+@media (max-width: 768px) {
+  
+  /* Navbar */
+  .navbar {
+    height: auto;
+    padding: 0.5rem 1rem;
+  }
+
+  /* Category filters scroll */
+  .filters {
+    overflow-x: auto;
+    flex-wrap: nowrap !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .filter-item {
+    min-width: 70px;
+    flex-shrink: 0;
+  }
+
+  /* Cards - 1 column on mobile */
+  .row {
+    --bs-gutter-x: 1rem;
+  }
+
+  /* Show page image */
+  .show-img {
+    height: 25vh;
+  }
+
+  /* Map full width on mobile */
+  #map {
+    height: 300px;
+    width: 100% !important;
+  }
+
+  /* Buttons stack on mobile */
+  .btns {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .btns a, .btns button {
+    width: 100%;
+  }
+
+  /* Footer */
+  .f-info {
+    height: auto;
+    padding: 1rem;
+    gap: 0.5rem;
+  }
+}
