@@ -68,10 +68,3 @@ module.exports.isReviewAuthor = async (req, res, next) => {
 };
 
 
-module.exports.isSiteOwner = (req, res, next) => {
-    if(res.locals.currUser && res.locals.currUser.username === "rbherusingh440") {
-        return next();
-    }
-    req.flash("error", "You are not authorized to do this!");
-    return res.redirect("/listings");
-};
