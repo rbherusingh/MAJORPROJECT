@@ -29,20 +29,14 @@
      <a href="/listings/<%= listing._id %>/edit" 
         class="btn btn-dark col-1 offset-3 edit-btn"
         >Edit</a>
-
-
-        
-    <% if(currUser && review.author._id.equals(currUser._id)) { %>
-<form 
-class="mb-3"
- method="POST" 
- action="/listings/<%= listing._id %>/reviews/<%= review._id %>?_method=DELETE"
-  >
-  <button class="btn btn-sm btn-dark">Delete</button>
-</form>
-<% } %>
-
-
+    
+     <form method="POST" action="/listings/<%= listing._id%>?_method=DELETE">
+       <button class="btn btn-dark  offset-5">
+        Delete </button>
+    </form>
+    </div>
+   <% } %>
+     
     <div  class="col-8 offset-3 mb-3">
       
       <% if(currUser) { %> 
@@ -104,6 +98,7 @@ class="mb-3"
         <div class="row">
          <p><b> ALL Review </b></p>
         <% for(review of listing.reviews) { %>
+
           <div class="card col-5 ms-3 mb-3">
            <div class="card-body">
                 <h5 class="card-title">@<%= review.author.username %></h5>
@@ -112,16 +107,13 @@ class="mb-3"
                   </p>
                 <p class="card-text"><%= review.comment %></p>
               
-                
-            <form 
-            class="mb-3"
-             method="POST" 
-             action="/listings/<%= listing._id %>/reviews/<%= review._id %>?_method=DELETE"
-              >
-             
-              <button class="btn btn-sm btn-dark">Delete</button>
+           <% if(currUser && review.author._id.equals(currUser._id)) { %>
+                <form class="mb-3" method="POST" 
+                action="/listings/<%= listing._id %>/reviews/<%= review._id %>?_method=DELETE">
+                  <button class="btn btn-sm btn-dark">Delete</button>
+                </form>
+                <% } %>
 
-            </form>
           </div>
           </div>
         <% } %>
